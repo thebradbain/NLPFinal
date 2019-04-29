@@ -297,7 +297,7 @@ public abstract class LMBase implements LMModel {
                 ArrayList<String> sentWords = new ArrayList<String>(Arrays.asList(sentence));
                 
                 double logProb = logProb(sentWords);
-                totalPerplexitySum += Math.pow(10, -logProb/(sentWords.size() + 1));
+                totalPerplexitySum += Math.pow(10, -logProb/(sentWords.size() - 1));
                 totalSentences++;
             }
             return totalPerplexitySum / totalSentences;
